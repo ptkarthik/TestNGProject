@@ -30,9 +30,18 @@ public class BaseTest {
     public void setUp() throws Exception {
         injector = Guice.createInjector(new TestModule());
         injector.injectMembers(this);
+        /*this to be used for WebTables*
         driver.get("https://cosmocode.io/automation-practice-webtable/#google_vignette");
+         */
+        /*This to be used for calendar
+        below
+
+         */
+        //driver.get("https://www.htmlelements.com/demos/calendar/overview/");
+        //below for paginatioon
+        driver.get("https://datatables.net/examples/basic_init/alt_pagination.html");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @AfterMethod
