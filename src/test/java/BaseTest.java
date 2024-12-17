@@ -5,6 +5,8 @@ import guice.TestModule;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utilities.CustomUtitilies;
+import utilities.WaitUtilties;
 
 import java.time.Duration;
 
@@ -12,6 +14,10 @@ public class BaseTest {
 
     @Inject
     WebDriver driver;
+    @Inject
+    CustomUtitilies customUtitilies;
+    @Inject
+    WaitUtilties waitUtilties;
 
     public static Injector getInjector() {
         return injector;
@@ -21,7 +27,6 @@ public class BaseTest {
 
     public BaseTest() {
         // Initialize the injector here
-
 
 
     }
@@ -41,7 +46,7 @@ public class BaseTest {
         //below for paginatioon
         driver.get("https://datatables.net/examples/basic_init/alt_pagination.html");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().deleteAllCookies();
     }
 
     @AfterMethod
