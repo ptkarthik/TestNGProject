@@ -1,3 +1,5 @@
+package tests;
+
 import com.google.inject.Inject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

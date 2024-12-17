@@ -1,3 +1,5 @@
+package tests;
+
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
@@ -7,8 +9,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utilities.CustomUtitilies;
 import utilities.WaitUtilties;
-
-import java.time.Duration;
 
 public class BaseTest {
 

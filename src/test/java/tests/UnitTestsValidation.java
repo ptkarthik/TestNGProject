@@ -1,3 +1,4 @@
+package tests;
 
 import com.google.inject.Inject;
 import dataproviders.DataProviderClass;
