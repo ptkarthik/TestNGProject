@@ -15,5 +15,7 @@ public class ValidateCoolor extends BaseTest {
         Color color= Color.fromString(cloorString);
         String hexValue=color.asHex();
         System.out.println(hexValue);
+
+
     }
 }
