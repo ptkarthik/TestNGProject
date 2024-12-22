@@ -2,6 +2,7 @@ package java8.streams;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Predicate;
 
 public class HandlingMaps {
     public static void main(String[] args) {
@@ -12,6 +13,8 @@ public class HandlingMaps {
         map.put("Harish","Cosmetics");
         map.put("Shruthy","College");
         map.put("Pradeep","IT");
+
+
 
         map.forEach((mapKey,mapValue)->{
         System.out.println(mapKey.toLowerCase());

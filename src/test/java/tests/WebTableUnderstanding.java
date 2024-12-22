@@ -1,3 +1,5 @@
+package tests;
+
 import com.google.inject.Inject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -5,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WebTableUnderstanding extends BaseTest {
@@ -13,6 +16,8 @@ public class WebTableUnderstanding extends BaseTest {
 
     @Test
     public void TestOne() {
+
+        List<String> listOfStrings=new ArrayList<>();
 
         System.out.println(driver.getCurrentUrl());
         WebElement table = driver.findElement(By.xpath("//table[@id='countries']"));
