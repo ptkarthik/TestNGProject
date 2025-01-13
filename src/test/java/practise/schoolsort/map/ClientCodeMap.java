@@ -29,12 +29,35 @@ public class ClientCodeMap {
 //            System.out.println(j.getStudentID());
 //        }
 
-        //lets see how reverse order works
-        Collections.sort(listOFStudents, new ComparatorReverseOrder());
+//        //lets see how reverse order works
+//        Collections.sort(listOFStudents, new ComparatorReverseOrder());
+//
+//        for (StudentDetails j : listOFStudents) {
+//            System.out.println(j.getStudentID()+ "  "+j.getStudentName());
+//        }
 
-        for (StudentDetails j : listOFStudents) {
-            System.out.println(j.getStudentID());
+        //above all of sorted by coonverting map too List nw we will do via Entries
+
+        Set<Map.Entry<Integer, StudentDetails>> setOfStudents = student.entrySet();
+        List<Map.Entry<Integer, StudentDetails>> convertedListOfMapEntries = new ArrayList<>(setOfStudents);
+
+        System.out.println(convertedListOfMapEntries);
+
+        //just too reverse via key which is "Integer type"
+        Collections.reverse(convertedListOfMapEntries);
+        System.out.println("After Reversal");
+        System.out.println(convertedListOfMapEntries);
+
+
+        // reverse via value "Student details" data either student name or id
+
+        Collections.sort(convertedListOfMapEntries, (e1, e2) -> e2.getValue().getStudentName().
+                compareTo(e1.getValue().getStudentName()));
+
+        for (Map.Entry<Integer, StudentDetails> j : convertedListOfMapEntries) {
+            System.out.println(j.getValue().getStudentID() + "  " + j.getValue().getStudentName());
         }
+
     }
 
 }
