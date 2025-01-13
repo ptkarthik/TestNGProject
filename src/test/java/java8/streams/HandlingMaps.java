@@ -1,7 +1,8 @@
 package java8.streams;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.openqa.selenium.WebDriver;
+
+import java.util.*;
 import java.util.function.Predicate;
 
 public class HandlingMaps {
@@ -16,8 +17,8 @@ public class HandlingMaps {
 
 
 
-        map.forEach((mapKey,mapValue)->{
-        System.out.println(mapKey.toLowerCase());
-            System.out.println(mapValue.toUpperCase());});
+//        map.forEach((mapKey,mapValue)->{
+//        System.out.println(mapKey.toLowerCase());
+//            System.out.println(mapValue.toUpperCase());});
     }
 }
