@@ -19,6 +19,6 @@ public class ListSort {
         Collections.sort(list,Collections.reverseOrder());
         System.out.println(list);
 
-        list.stream().sorted(Collections.reverseOrder()).forEach(n->System.out.println(n));
+        list.stream().sorted(Collections.reverseOrder()).forEach(n->System.out.print(n+"  "));
     }
 }
