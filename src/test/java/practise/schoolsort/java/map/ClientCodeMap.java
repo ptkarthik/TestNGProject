@@ -1,4 +1,4 @@
-package practise.schoolsort.map;
+package practise.schoolsort.java.map;
 
 import java.util.*;
 

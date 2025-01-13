@@ -1,4 +1,4 @@
-package practise.schoolsort.list;
+package practise.schoolsort.java8.list;
 
 public class StudentDetails implements Comparable<StudentDetails> {
 

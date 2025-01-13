@@ -1,4 +1,4 @@
-package practise.schoolsort.map;
+package practise.schoolsort.java8.map;
 
 import java.util.Comparator;
 import java.util.function.Function;
