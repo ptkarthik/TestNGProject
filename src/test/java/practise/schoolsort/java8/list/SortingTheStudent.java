@@ -1,4 +1,4 @@
-package practise.schoolsort.list;
+package practise.schoolsort.java8.list;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,9 +12,14 @@ public class SortingTheStudent {
         studentDetailsList.add(new StudentDetails(3, "Inira", 2.10, "Government"));
         studentDetailsList.add(new StudentDetails(23, "Harish", 28.00, "CustomerSupport"));
         studentDetailsList.add(new StudentDetails(1, "Pradeep", 26.00, "Developer"));
-        Collections.sort(studentDetailsList,new ComaparatorSetup());
-       for(StudentDetails s:studentDetailsList) {
-           System.out.println(s.getName());
-       }
+        List<StudentDetails> srtedList=studentDetailsList.stream().sorted(new ComaparatorSetup()).toList();
+        for(StudentDetails s:srtedList)
+        {
+            System.out.println(s.getName());
+        }
+
+        System.out.println("Using fr each");
+        //using foreach
+        studentDetailsList.stream().sorted(new ComaparatorSetup()).forEach(student->System.out.println(student.getName()));
     }
 }

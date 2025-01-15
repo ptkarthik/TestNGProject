@@ -1,4 +1,4 @@
-package practise.schoolsort.map;
+package practise.schoolsort.java.map;
 
 public class StudentDetails implements Comparable<StudentDetails>{
     public StudentDetails(String studentName, String studentID) {
