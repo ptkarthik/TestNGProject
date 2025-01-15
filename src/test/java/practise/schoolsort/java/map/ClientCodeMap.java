@@ -18,6 +18,7 @@ public class ClientCodeMap {
 
         //below returns collections
         Collection<StudentDetails> collectionOfMap = student.values();
+        Set<Integer> ss=student.keySet();
 
         List<StudentDetails> listOFStudents = new ArrayList<>(collectionOfMap);
 //        System.out.println("The collections of list of students is" + listOFStudents);

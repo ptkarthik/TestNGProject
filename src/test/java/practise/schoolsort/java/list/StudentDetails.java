@@ -6,6 +6,16 @@ public class StudentDetails implements Comparable<StudentDetails> {
     private String name;
     private Double age;
 
+    @Override
+    public String toString() {
+        return "StudentDetails{" +
+                "rollNumber=" + rollNumber +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", department='" + department + '\'' +
+                '}';
+    }
+
     public StudentDetails(int rollNumber, String name, Double age, String department) {
         this.rollNumber = rollNumber;
         this.name = name;

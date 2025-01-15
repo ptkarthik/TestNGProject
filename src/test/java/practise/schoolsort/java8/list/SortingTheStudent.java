@@ -13,13 +13,13 @@ public class SortingTheStudent {
         studentDetailsList.add(new StudentDetails(23, "Harish", 28.00, "CustomerSupport"));
         studentDetailsList.add(new StudentDetails(1, "Pradeep", 26.00, "Developer"));
         List<StudentDetails> srtedList=studentDetailsList.stream().sorted(new ComaparatorSetup()).toList();
-        for(StudentDetails s:srtedList)
-        {
-            System.out.println(s.getName());
-        }
-
-        System.out.println("Using fr each");
-        //using foreach
+//        for(StudentDetails s:srtedList)
+//        {
+//            System.out.println(s.getName());
+//        }
+//studentDetailsList.stream().sorted().forEachOrdered(n->System.out.println(n.getName()));
+//        System.out.println("Using fr each");
+//        //using foreach
         studentDetailsList.stream().sorted(new ComaparatorSetup()).forEach(student->System.out.println(student.getName()));
     }
 }
