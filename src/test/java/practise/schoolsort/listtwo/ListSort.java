@@ -11,7 +11,7 @@ public class ListSort {
         list.add("Orange");
         list.add("Grapes");
         list.add("Mango");
-        list.add("Carror");
+        list.add("Carrot");
         list.add("Beetroot");
         list.add("Banana");
         Collections.sort(list);
