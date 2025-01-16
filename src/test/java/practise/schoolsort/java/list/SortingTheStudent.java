@@ -15,6 +15,7 @@ public class SortingTheStudent {
 //        Collections.sort(studentDetailsList);
         Collections.sort(studentDetailsList, new ComaparatorSetup());
         System.out.println(studentDetailsList);
+
 //        Collections.sort(studentDetailsList,new ComaparatorSetup());
 //       for(StudentDetails s:studentDetailsList) {
 //           System.out.println(s.getName());
