@@ -43,11 +43,10 @@ public class ProductCart {
         }
 
         //approach 2:
-
         productCart.entrySet().stream().map(s -> bifunction.apply(s.getKey(), s.getValue())).
                 forEach(sum -> System.out.println("the total sum of the + is" + " " + sum));
 
-        //apprach 3: to pass product details to foreach
+        //approach 3: to pass product details to foreach
         productCart.entrySet().stream()
                 .forEach(entry -> {
                     String productName = entry.getKey().getName();
