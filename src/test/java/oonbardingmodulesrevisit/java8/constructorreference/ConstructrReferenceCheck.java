@@ -11,7 +11,6 @@ public class ConstructrReferenceCheck {
     public static void main(String[] args) {
 
         ConstructorReference<String, String, Double, Employee> constructorReference = Employee::new;
-
         Employee emp = constructorReference.getEmployee("karthik", "2345", 159000.00);
 
     }
