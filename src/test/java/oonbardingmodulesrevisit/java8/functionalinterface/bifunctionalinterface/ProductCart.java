@@ -41,5 +41,18 @@ public class ProductCart {
             System.out.println("the total value of product " + k.getKey().getName() + " " +
                     "is " + bifunction.apply(k.getKey(), k.getValue()));
         }
+
+        //approach 2:
+
+        productCart.entrySet().stream().map(s -> bifunction.apply(s.getKey(), s.getValue())).
+                forEach(sum -> System.out.println("the total sum of the + is" + " " + sum));
+
+        //apprach 3: to pass product details to foreach
+        productCart.entrySet().stream()
+                .forEach(entry -> {
+                    String productName = entry.getKey().getName();
+                    double cost = bifunction.apply(entry.getKey(), entry.getValue());
+                    System.out.println("The total cost of product " + productName + " is " + cost);
+                });
     }
 }
