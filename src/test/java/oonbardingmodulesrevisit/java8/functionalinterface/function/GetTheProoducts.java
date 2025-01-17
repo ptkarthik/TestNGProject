@@ -22,7 +22,6 @@ public class GetTheProoducts {
         listOfProducts.add(new ProductClass("Cakes-plum", 249.99, "Foods", 'F'));
         listOfProducts.add(new ProductClass("25 KG Rice", 788.50, "Foods", 'F'));
         listOfProducts.add(new ProductClass("Laptop Keyboard", 499.99, "Electronics", 'E'));
-
         listOfProducts.add(new ProductClass("Toothbrush", 18.99, "HomeProducts", 'H'));
         listOfProducts.add(new ProductClass("Biscuits and Snakes", 145.99, "Foods", 'F'));
 
@@ -33,6 +32,14 @@ public class GetTheProoducts {
         for (ProductClass l : listOfProducts) {
             System.out.println(g.apply(l));
         }
+        System.out.println("");
+        System.out.println("via streams ");
+        System.out.println("");
+
+        //approach 2
+        listOfProducts.stream().map(p -> p.getPrice() > 100 && p.getCategory().
+                equalsIgnoreCase("Electronics") ? p.getName() + " price above " +
+                "100" : p.getName() + " Price is not above 100").forEach(p->System.out.println(p));
 
 
     }
