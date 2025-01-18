@@ -1,11 +1,11 @@
 package practise.restassured.hometask2;
 
 
-import io.restassured.mapper.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -30,7 +30,7 @@ public class VerifyTypeCode {
 
      */
     @Test
-    public void typeCode() {
+    public void typeCode() throws JsonProcessingException {
         RequestSpecification baseUri = given().baseUri("https://jsonplaceholder.typicode.com");
 //1. Verify the number of resources at each resource end point (6 marks)
         //resource at post
@@ -38,8 +38,8 @@ public class VerifyTypeCode {
         //approach1:
         int size = response.jsonPath().getList("$").size();
         System.out.println(size);
-
-
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonNode = objectMapper.readTree(response.asString());
 
     }
 }
