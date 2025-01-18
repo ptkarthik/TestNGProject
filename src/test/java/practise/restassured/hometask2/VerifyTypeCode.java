@@ -5,6 +5,7 @@ import io.restassured.mapper.ObjectMapper;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -37,6 +38,7 @@ public class VerifyTypeCode {
         //approach1:
         int size = response.jsonPath().getList("$").size();
         System.out.println(size);
+
 
 
     }
