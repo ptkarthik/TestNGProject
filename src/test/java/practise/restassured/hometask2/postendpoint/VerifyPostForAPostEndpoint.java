@@ -16,11 +16,8 @@ public class VerifyPostForAPostEndpoint {
                 header("Content-Type", "application/json");
         PostObjectPojo object = new PostObjectPojo(1, 101, "Karthik is the change",
                 "new request");
-
         Response response = given().spec(baseUri).
                 body(object).when().post("/posts/").then().log().all().extract().response();
-
-
         assertThat(response.jsonPath().getInt("id"), equalTo(101));
         assertThat(response.statusCode(), equalTo(201));
         assertThat(response.jsonPath().getString("body"), equalTo("new request"));
