@@ -12,15 +12,17 @@ import static org.hamcrest.Matchers.equalTo;
 public class verifyPutforAPostEndpoint {
     @Test
     public void typeCode() throws JsonProcessingException {
-        RequestSpecification baseUri = given().baseUri("https://jsonplaceholder.typicode.com");
+        RequestSpecification baseUri = given().baseUri("https://jsonplaceholder.typicode.com").
+                header("Content-Type", "application/json");
         PostObjectPojo object = new PostObjectPojo(1, 5, "Karthik is the change",
                 "repudiandae veniam quaerat sunt sed\\nalias aut fugiat sit autem sed " +
                         "est\\nvoluptatem omnis " +
                         "possimus esse voluptatibus quis\\nest aut tenetur dolor neque");
 
-        String response = given().spec(baseUri).pathParam("id", 5).
-                body(object).when().put("/posts/{id}").then().log().all().extract().response().asString();
-System.out.println(response);
-//        assertThat(response.jsonPath().getString("title"), equalTo("Karthik is the change"));
+        Response response = given().spec(baseUri).pathParam("id", 5).
+                body(object).when().put("/posts/{id}").then().log().all().extract().response();
+
+
+        assertThat(response.jsonPath().getString("title"), equalTo("Karthik is the change"));
     }
 }
