@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class DoAPestUsingPoost {
     @Test
@@ -43,8 +45,9 @@ public class DoAPestUsingPoost {
                 addPathParam("version", "v2").
                 addPathParam("petID", response.jsonPath().get("id")).build();
         given().spec(latterData).when().get("/{version}/{petType}/{petID}").then().log().all();
-
-
+        assertThat(response.statusCode(), equalTo(200));
+        assertThat(response.contentType(), equalTo("application/json"));
+        assertThat(response.jsonPath().getString("name"), equalTo("Karthik's Dog"));
     }
 
 
