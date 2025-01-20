@@ -11,8 +11,9 @@ import practise.restassured.hometask3.typicde.pojos.UserDetails;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
+import static org.testng.Assert.assertTrue;
 
-public class ValidateUsersFromJsonTypi {
+public class ValidateUsersFromJsonTypi extends BaseTest {
     /*
     task - 2:(test data might be already present)
 https://jsonplaceholder.typicode.com/users
@@ -40,5 +41,7 @@ That one of the users has a name of “Ervin Howell”
                 constructCollectionType(List.class, UserDetails.class));
         UserDetails userDetails = rootClass.get(0);
         System.out.println(userDetails.toString());
+        assertTrue(rootClass.size() > 3);
+        assertTrue(returnTrueIfNamePresent(rootClass));
     }
 }
