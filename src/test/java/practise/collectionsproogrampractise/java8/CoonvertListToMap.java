@@ -27,6 +27,8 @@ public class CoonvertListToMap {
         second iteration since 1 is greater it becomes a and b is the next value of stream it keeps checking and return
          */
         Integer max = listOfIntegers.stream().reduce(0, (a, b) -> a > b ? a : b);
+        //peek used for debudding prviding statement and it desnt return any
+        listOfIntegers.stream().peek(s -> System.out.println(s));
         System.out.println("the max" + max);
     }
 }
