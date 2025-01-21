@@ -52,7 +52,7 @@ public class ClientCodeMap {
 
         // reverse via value "Student details" data either student name or id
 
-        Collections.sort(convertedListOfMapEntries, (e1, e2) -> e2.getValue().getStudentName().
+        Collections.sort(convertedListOfMapEntries,  (e1, e2) -> e2.getValue().getStudentName().
                 compareTo(e1.getValue().getStudentName()));
 
         for (Map.Entry<Integer, StudentDetails> j : convertedListOfMapEntries) {
