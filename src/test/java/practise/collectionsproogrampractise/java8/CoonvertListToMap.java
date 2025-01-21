@@ -1,10 +1,7 @@
 package practise.collectionsproogrampractise.java8;
 
 import java.security.SecureRandom;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CoonvertListToMap {
@@ -26,9 +23,15 @@ public class CoonvertListToMap {
         first iteration it checks 0,1
         second iteration since 1 is greater it becomes a and b is the next value of stream it keeps checking and return
          */
+
         Integer max = listOfIntegers.stream().reduce(0, (a, b) -> a > b ? a : b);
+        System.out.println("the max" + max);
+
         //peek used for debudding prviding statement and it desnt return any
         listOfIntegers.stream().peek(s -> System.out.println(s));
-        System.out.println("the max" + max);
+
+        //max value using listOfIntegers
+        Optional<Integer> optional = listOfIntegers.stream().max((a,b)->a.compareTo(b));
+        optional.ifPresent(System.out::print);
     }
 }
