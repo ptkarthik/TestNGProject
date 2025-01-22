@@ -5,6 +5,9 @@ import myrepo.pojos.RootClass;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class DeserializationClass {
     public static void main(String[] args) throws IOException {
@@ -12,7 +15,7 @@ public class DeserializationClass {
         RootClass expectedPojo = readpojoToObjectClass("expected");
         validatePojos(actualPojo, expectedPojo);
 
-
+        //
         /*by default custom objects , equal will be like
         public bolean equals(Object o) {
          return (this==o);  // meaning
