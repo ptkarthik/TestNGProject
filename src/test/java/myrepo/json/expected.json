@@ -1,0 +1,85 @@
+{
+  "criterias": [
+    {
+      "criteria": "CNTRY",
+      "description": "Country Code"
+    },
+    {
+      "criteria": "PORTOBJ",
+      "description": "Portfolio Objective"
+    },
+    {
+      "criteria": "INTENT",
+      "description": "Rule Intent"
+    }
+  ],
+  "criterions": [
+    [
+      {
+        "criteria": "CNTRY",
+        "value": "US",
+        "description": "United States"
+      },
+      {
+        "criteria": "PORTOBJ",
+        "value": "1",
+        "description": "Preservation of Principal"
+      },
+      {
+        "criteria": "INTENT",
+        "value": "Generic",
+        "description": "Generic"
+      }
+    ],
+    [
+      {
+        "criteria": "CNTRY",
+        "value": "US",
+        "description": "United States"
+      },
+      {
+        "criteria": "PORTOBJ",
+        "value": "2",
+        "description": "Income Focus"
+      },
+      {
+        "criteria": "INTENT",
+        "value": "Generic",
+        "description": "Generic"
+      }
+    ],[
+      {
+        "criteria": "CNTRY",
+        "value": "US",
+        "description": "United States"
+      },
+      {
+        "criteria": "PORTOBJ",
+        "value": "3",
+        "description": "Balanced towards Income"
+      },
+      {
+        "criteria": "INTENT",
+        "value": "Generic",
+        "description": "Generic"
+      }
+    ],
+    [
+      {
+        "criteria": "CNTRY",
+        "value": "US",
+        "description": "United States"
+      },
+      {
+        "criteria": "PORTOBJ",
+        "value": "4",
+        "description": "Balanced towards Growth and Income"
+      },
+      {
+        "criteria": "INTENT",
+        "value": "Generic",
+        "description": "Generic"
+      }
+    ]
+  ]
+}
