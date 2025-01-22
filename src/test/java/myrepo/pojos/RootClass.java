@@ -1,9 +1,22 @@
 package myrepo.pojos;
 
 import java.util.List;
+import java.util.Objects;
 
 public class RootClass {
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RootClass rootClass = (RootClass) o;
+        return Objects.equals(criterias, rootClass.criterias) && Objects.equals(criterions, rootClass.criterions);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(criterias, criterions);
+    }
 
     public RootClass() {
 

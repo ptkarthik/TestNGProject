@@ -11,9 +11,42 @@ public class DeserializationClass {
         RootClass actualPojo = readpojoToObjectClass("actual");
         RootClass expectedPojo = readpojoToObjectClass("expected");
         validatePojos(actualPojo, expectedPojo);
+
+
+        /*by default custom objects , equal will be like
+        public bolean equals(Object o) {
+         return (this==o);  // meaning
+         just check memory address apparently
+         bth memory will be different so output will be false;
+        }
+
+so, we have to override and provide details
+         */
     }
 
     private static void validatePojos(RootClass actualPojo, RootClass expectedPojo) {
+        /*
+        all match (actual json first object -->
+        expected will go over all and either of the expectations shoould match with actual)
+        like Two pointer it checks
+         */
+        System.out.println("The Get Criterion Validation is " + actualPojo.
+                getCriterias().stream().allMatch(actualcriteria -> expectedPojo.getCriterias().
+                        stream().anyMatch(expectedCriteria ->
+                                expectedCriteria.getCriteria().equals(actualcriteria.getCriteria()))));
+
+        /**
+         * now we are planning to go on next Method
+         *
+         *
+         */
+        System.out.println(actualPojo.getCriterions().stream().flatMap(listOfCriterions -> listOfCriterions.stream()).
+                allMatch(actualcriterions -> expectedPojo.getCriterions().stream().
+                        flatMap(expectedListOfCriterions -> expectedListOfCriterions.stream()).
+                        anyMatch(expectedCriteria -> expectedCriteria.getValue().equals(actualcriterions.getValue())
+                                && expectedCriteria.getDescription().equals(actualcriterions.getDescription())
+                                && expectedCriteria.getCriteria().equals(actualcriterions.getCriteria()))));
+
     }
 
     private static RootClass readpojoToObjectClass(String type) throws IOException {
