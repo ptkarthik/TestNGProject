@@ -6,7 +6,6 @@ import java.util.List;
 public class ConversionsCheck {
     public static void main(String[] args) {
         //list too Array
-
         List<String> listOfStrings= new ArrayList<>();
         listOfStrings.add("Hi");
         listOfStrings.add("Hello");

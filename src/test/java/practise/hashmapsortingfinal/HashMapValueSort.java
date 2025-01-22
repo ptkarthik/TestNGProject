@@ -59,7 +59,8 @@ public class HashMapValueSort {
 
         ////using entryset with java8 using for each
         students.entrySet().stream().sorted((set1, set2) -> set2.getValue().
-                compareTo(set1.getValue())).forEach((e) -> System.out.println(e.getKey() + " " + e.getValue()));
+                compareTo(set1.getValue())).forEach((e) ->
+                System.out.println(e.getKey() + " " + e.getValue()));
         ////using entryset with java8 using linkedHashMap
         Map<String, String> linkedHashMap4 = students.entrySet().
                 stream().sorted((set1, set2) -> set2.getValue().
