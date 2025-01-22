@@ -13,7 +13,6 @@ public class PaginationsData extends BaseTest {
         String[] split = driver.findElement(By.xpath("//div[@id='example_info']")).
                 getText().split(" ");
         int totalRecords = Integer.parseInt(split[5]);
-
         do {
             WebElement table = driver.findElement(By.xpath("//table[@id='example']"));
             customUtitilies.scrollIntoView(table);
@@ -32,7 +31,6 @@ public class PaginationsData extends BaseTest {
                 System.out.println();
             }
             nxtButton.click();
-
             if (totalRecords == currentRecord) {
                 break;
             }
