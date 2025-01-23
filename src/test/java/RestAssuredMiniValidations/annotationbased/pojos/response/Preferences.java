@@ -1,11 +1,9 @@
 package RestAssuredMiniValidations.annotationbased.pojos.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@Getter
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

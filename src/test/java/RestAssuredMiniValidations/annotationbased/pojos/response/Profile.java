@@ -2,13 +2,11 @@ package RestAssuredMiniValidations.annotationbased.pojos.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
+@Getter
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -41,5 +39,5 @@ public class Profile {
 
     @JsonProperty("last_updated")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssX")
-    private String lastUpdated; // ISO 8601 DateTime
+    private String lastUpdated;
 }

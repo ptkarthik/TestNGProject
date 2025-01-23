@@ -4,6 +4,9 @@ import RestAssuredMiniValidations.annotationbased.pojos.request.Address;
 import RestAssuredMiniValidations.annotationbased.pojos.request.Contacts;
 import RestAssuredMiniValidations.annotationbased.pojos.request.Preferences;
 import RestAssuredMiniValidations.annotationbased.pojos.request.RootClass;
+import RestAssuredMiniValidations.annotationbased.pojos.response.Profile;
+import RestAssuredMiniValidations.annotationbased.pojos.response.RootResponse;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
@@ -12,6 +15,8 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class validateRequestVsResponse {
     @Test
@@ -31,10 +36,11 @@ public class validateRequestVsResponse {
                 .body(rootClass).when().post("/post").then().extract().response();
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Response responsePojo = objectMapper.readValue(response.asString(), Response.class);
-
-        //validation of request vs response
-
-
+        objectMapper.enable(JsonParser.Feature.ALLOW_COMMENTS);
+        RootResponse responsePojo = objectMapper.readValue(response.asString(), RootResponse.class);
+        assertThat(responsePojo.getMessage(), equalTo("User profile updated successfully."));
+        assertThat(responsePojo.getStatus(), equalTo("success"));
+        Profile responseProfile = responsePojo.getProfile();
+        assertThat(responseProfile.getFullName(), equalTo(rootClass.getFull_Name()));
     }
 }
