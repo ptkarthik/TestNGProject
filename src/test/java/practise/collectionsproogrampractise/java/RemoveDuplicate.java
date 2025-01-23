@@ -1,9 +1,6 @@
 package practise.collectionsproogrampractise.java;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class RemoveDuplicate {
@@ -27,7 +24,7 @@ public class RemoveDuplicate {
                 "Lime", "Papaya", "Watermelon", "Pineapple", "Orange", "kaka"
         );
 
-        //approach 1
+        // finding duplicates : approach 1
         fruits.stream().collect(Collectors.
                         groupingBy(key -> key, Collectors.counting())).entrySet().
                 stream().map((entry) -> entry.getValue() > 1 ? entry.getKey() +
@@ -55,6 +52,10 @@ public class RemoveDuplicate {
             }
 
         }
+
+        //remving duplicates
+        Set<String> duplicates = new HashSet<>(fruits);
+        System.out.println(duplicates);
 
     }
 }
