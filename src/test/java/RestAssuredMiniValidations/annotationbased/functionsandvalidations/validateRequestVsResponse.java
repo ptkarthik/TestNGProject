@@ -42,5 +42,14 @@ public class validateRequestVsResponse {
         assertThat(responsePojo.getStatus(), equalTo("success"));
         Profile responseProfile = responsePojo.getProfile();
         assertThat(responseProfile.getFullName(), equalTo(rootClass.getFull_Name()));
+        //
+
+        responsePojo.getProfile().getAddresses().stream().
+                allMatch(responseAddress -> rootClass.getAddresses().
+                        stream().anyMatch(rootAddress -> rootAddress.getCity().equals(responseAddress.getCity())
+                                && rootAddress.getCountry().equals(responseAddress.getCountry())
+                                && rootAddress.getState().equals(responseAddress.getState())
+                                && rootAddress.getPostal_code().equals(responseAddress.getPostalCode())
+                                && rootAddress.getType().equals(responseAddress.getType())));
     }
 }
