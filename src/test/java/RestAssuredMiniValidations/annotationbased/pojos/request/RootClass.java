@@ -28,7 +28,7 @@ public class RootClass {
     @JsonProperty("addresses")
     private List<Address> addresses;
     @JsonProperty("date_of_birth")
-    private List<Address> date_of_birth;
+    private String date_of_birth;
     @JsonProperty("skills")
     private List<String> skills;
     @JsonProperty("preferences")
