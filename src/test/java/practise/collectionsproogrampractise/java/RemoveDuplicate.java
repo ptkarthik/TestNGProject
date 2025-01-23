@@ -57,5 +57,12 @@ public class RemoveDuplicate {
         Set<String> duplicates = new HashSet<>(fruits);
         System.out.println(duplicates);
 
+        //mostFrequent element using java 8
+        Optional<Long> opt = fruits.stream().collect(Collectors.
+                        groupingBy((fruit -> fruit), Collectors.counting())).entrySet().stream().
+                max((entry1, entry2) -> entry1.getValue().
+                        compareTo(entry2.getValue())).map(entry -> entry.getValue());
+        System.out.println(opt.get());
+
     }
 }
