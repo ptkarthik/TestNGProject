@@ -1,13 +1,10 @@
-package myrepo.functionalities;
+package RestAssuredMiniValidations.venkatidea.functionalities;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import myrepo.pojos.RootClass;
+import RestAssuredMiniValidations.venkatidea.pojos.RootClass;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Stream;
 
 public class DeserializationClass {
     public static void main(String[] args) throws IOException {

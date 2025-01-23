@@ -1,4 +1,4 @@
-package myrepo.pojos;
+package RestAssuredMiniValidations.venkatidea.pojos;
 
 import java.util.List;
 import java.util.Objects;
