@@ -1,6 +1,7 @@
 package practise.practiseroundtwo.java8;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,6 +39,9 @@ public class ReverseMultipleDataTypes {
         reversetheInteger(integerList);
         reversetheCharacter(characterList);
         reversetheDouble(doubleList);
+        List<String> lists = Arrays.asList("Apple", "Banana", "Cherry");
+        lists.stream().sorted(String::compareToIgnoreCase).forEach(System.out::println);
+
     }
 
     private static void reversetheDouble(List<Double> doubleList) {
@@ -65,6 +69,11 @@ public class ReverseMultipleDataTypes {
 
 
     }
+
+    private static void reversetheDouble1(List<Double> doubleList) {
+        System.out.println(doubleList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+    }
+
 
 }
 
