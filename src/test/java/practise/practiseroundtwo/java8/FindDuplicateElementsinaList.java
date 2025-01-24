@@ -2,6 +2,7 @@ package practise.practiseroundtwo.java8;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FindDuplicateElementsinaList {
 
@@ -25,5 +26,11 @@ public class FindDuplicateElementsinaList {
 
             }
         }
+
+        //lets do the same with java 8
+        System.out.println(items.stream().filter(i -> items.stream().
+                        filter(j -> i.equalsIgnoreCase(j)).count() > 1).distinct().
+                collect(Collectors.toList()));
+
     }
 }
