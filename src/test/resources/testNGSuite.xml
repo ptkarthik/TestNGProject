@@ -5,17 +5,18 @@
         <listener class-name="org.listener.Listenerclass"></listener>
         <listener class-name="extent.ExtentReportListener"></listener>
     </listeners>
-
+    <parameter name="username" value="ptkarthik"></parameter>
+    <parameter name="password" value="password"></parameter>
     <test name="My Test">
-        <groups>
-            <run>
-                <include name="positive"/>
-                <include name="negative"/>
-                <!--                <exclude name="negative"></exclude>-->
-            </run>
-        </groups>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="positive"/>-->
+<!--                <include name="negative"/>-->
+<!--                &lt;!&ndash;                <exclude name="negative"></exclude>&ndash;&gt;-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
-            <class name="tests.UnitTestsValidation"></class>
+            <class name="tests.AutomatingThePage"></class>
         </classes>
     </test>
 </suite>
