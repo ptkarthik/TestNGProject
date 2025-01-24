@@ -1,7 +1,14 @@
 package practise.practiseroundtwo.java8;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Data
+@Setter
+@Getter
 public class MovieClass implements Comparable<MovieClass> {
     private String movieName;
     private double ratings;

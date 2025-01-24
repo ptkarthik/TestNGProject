@@ -3,6 +3,7 @@ package practise.practiseroundtwo.java8;
 import practise.java8operations.moviedatasorting.MovieClass;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class SortCustomObjects {
@@ -31,5 +32,13 @@ public class SortCustomObjects {
         listOfMovies.add(new practise.java8operations.moviedatasorting.MovieClass("Shutter Island", 8.2, "Mystery", 2010));
         listOfMovies.add(new practise.java8operations.moviedatasorting.MovieClass("A Beautiful Mind", 8.2, "Biography", 2001));
         listOfMovies.add(new MovieClass("Jaws", 8.0, "Thriller", 1975));
+
+        listOfMovies.stream()
+                .sorted(Comparator.comparing(MovieClass::getRatings).reversed()  // Sort by rating (highest first)
+                        .thenComparing(MovieClass::getGenre)                           // Then by genre alphabetically
+                        .thenComparing(MovieClass::getYear))                           // Then by year (ascending)
+                .forEach(movie -> System.out.println(movie.getMovieName() + " - " +
+                        movie.getRatings() + " - " + movie.getGenre() + " - " + movie.getYear()));
     }
 }
+
