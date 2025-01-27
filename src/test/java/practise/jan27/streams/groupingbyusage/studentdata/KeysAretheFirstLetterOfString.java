@@ -24,8 +24,8 @@ first letter of a string, and values are lists of strings.
             for (String name1 : names) {
                 if (name1.indexOf(characterData) == 0) {
                     stringList.add(name1);
-                    hashMap.put(characterData, stringList);
                 }
+                hashMap.put(characterData, stringList);
             }
         }
         System.out.println(hashMap);
