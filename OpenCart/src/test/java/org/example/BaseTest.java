@@ -17,7 +17,6 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() throws IOException {
-
         Injector injector = Guice.createInjector(new TestModule());
         injector.injectMembers(this);
         driver.get("https://localhost/opencart/");
