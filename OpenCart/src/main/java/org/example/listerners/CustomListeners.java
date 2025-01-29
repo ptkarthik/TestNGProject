@@ -6,6 +6,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.util.Arrays;
+
 
 public class CustomListeners implements ITestListener {
     public static final Logger logger = LogManager.getLogger(CustomListeners.class);
@@ -23,7 +25,8 @@ public class CustomListeners implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-
+        Throwable throwable = iTestResult.getThrowable();
+        logger.info(throwable.getMessage());
     }
 
     @Override
