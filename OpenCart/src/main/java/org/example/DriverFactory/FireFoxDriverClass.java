@@ -9,6 +9,7 @@ public class FireFoxDriverClass implements WebDriverCreation {
     public WebDriver createWebDriver() {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.addArguments("--disable Notification");
+        firefoxOptions.setAcceptInsecureCerts(true);
         return new FirefoxDriver(firefoxOptions);
     }
 }

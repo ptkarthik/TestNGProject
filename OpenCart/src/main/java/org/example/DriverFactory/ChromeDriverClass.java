@@ -9,6 +9,7 @@ public class ChromeDriverClass implements WebDriverCreation {
     public WebDriver createWebDriver() {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--disable-notification");
+        chromeOptions.setAcceptInsecureCerts(true);
         return new ChromeDriver(chromeOptions);
     }
 }

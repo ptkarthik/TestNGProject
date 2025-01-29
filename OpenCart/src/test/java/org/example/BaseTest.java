@@ -22,12 +22,14 @@ public class BaseTest {
     public void setup() throws IOException {
         Injector injector = Guice.createInjector(new TestModule());
         injector.injectMembers(this);
-        driver.get(TestConstants.BASEPATH);
+        driver.get(TestConstants.BASEURL);
+        driver.manage().deleteAllCookies();
+
 
     }
 
     @AfterMethod
     public void tearDown() {
-//        driver.quit();
+        driver.quit();
     }
 }
